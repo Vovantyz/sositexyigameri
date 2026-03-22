@@ -222,13 +222,6 @@
 			add_vision(user)
 	..()
 
-/obj/item/clothing/mask/gas/yautja/SoldierA
-	name = "\improper Nracha-Dte enclosed helmet"
-	desc = "A fully-enclosed combat helmet that is fitted around the entire head, rather than acting as a facemask. It nonetheless features the same heads-up display as most clan masks."
-	icon_state = "helmet_powered"
-	item_state = "helmet_powered"
-	icon = 'icons/obj/items/hunter/mcaste_gear.dmi'
-
 /obj/item/clothing/mask/gas/yautja/thrall
 	name = "alien mask"
 	desc = "A simplistic metallic face mask with advanced capabilities."
