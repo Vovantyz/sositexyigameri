@@ -141,6 +141,17 @@
 	icon_state = "fullarmor_[armor_material]"
 	LAZYSET(item_state_slots, WEAR_JACKET, "fullarmor_[armor_material]")
 
+/obj/item/clothing/suit/armor/yautja/hunter/full/soldierA
+	name = "\improper Nracha-Dte power armor"
+	desc = "Produced only by artisans overseen directly by the Council of Ancients, the Nracha-Dte-Type is a powered suit of armor built for war rather than hunting. It is heavy, and absurdly protective."
+	icon = 'icons/obj/items/hunter/mcaste_gear.dmi'
+	icon_state = "fullarmor_soldier"
+
+/obj/item/clothing/suit/armor/yautja/hunter/full/soldierB
+	name = "\improper Nracha-Dte command power armor"
+	desc = "Produced only by artisans overseen directly by the Council of Ancients, the Nracha-Dte-type is a powered suit of armor built for war rather than hunting. It is heavy, and absurdly protective. This one features a ceremonial pauldron labeling the wearer as an Enforcer."
+	icon = 'icons/obj/items/hunter/mcaste_gear.dmi'
+	icon_state = "fullarmor_soldier_lead"
 
 /obj/item/clothing/yautja_cape
 	name = PRED_YAUTJA_CAPE
@@ -261,6 +272,13 @@
 
 /obj/item/clothing/shoes/yautja/hunter/knife
 	spawn_item_type = /obj/item/weapon/yautja/knife
+
+/obj/item/clothing/shoes/yautja/hunter/SoldierA
+	name = "\improper Nracha-Dte armored greaves"
+	desc = "The lower half of the M'talt-Type powered armor suit, used exclusively in battle against the most disdainful of dishonorable targets. Like the upper suit, there is very little damage it cannot shrug off."
+	icon = 'icons/obj/items/hunter/mcaste_gear.dmi'
+	icon_state = "y-boots_powered"
+	item_state = "y-boots_powered"
 
 /obj/item/clothing/under/chainshirt
 	name = "ancient alien mesh suit"
