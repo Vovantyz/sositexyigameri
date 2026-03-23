@@ -259,6 +259,18 @@
 	. = ..()
 	reagents.add_reagent("cola", 30)
 
+/obj/item/reagent_conatiner/food/drinks/cans/redbull
+	name = "\improper RedBull"
+	desc = "Most popular energy drink in entire world. Tired? You don't need a sleep, you need a RedBull."
+	desc_lore = "Red Bull is the most popular energy drink in the world, famous for its quality and its advertising. It is popular among soldiers because it relieves fatigue well thanks to its high dose of caffeine. It has also proven itself as a good remedy for blood loss, the huge amount of sugar helps an exhausted body recover from blood loss and saturates the body with carbohydrates."
+	icon_state = "redbull"
+	crushed_icon = "redbull_crushed"
+
+/obj/item/reagent_container/food/drinks/cans/redbull/Initialize()
+	. = ..()
+	reagents.add_reagent("coffee", 30)
+	reagents.add_reagent("sugar", 50)
+
 /obj/item/reagent_container/food/drinks/cans/pepsi
 	name = "\improper Pepsi"
 	desc = "The Cola Wars left it defeated, but this beverage retains its place as second-most popular soft drink in the UA."
