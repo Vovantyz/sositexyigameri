@@ -122,9 +122,13 @@ GLOBAL_LIST_INIT(cm_vending_gear_leader, list(
 //------------CLOTHING VENDOR---------------
 
 GLOBAL_LIST_INIT(cm_vending_clothing_leader, list(
+		list("STANDARD EQUIPMENT (TAKE ALL)", 0, null, null, null),
+		list("M09 Helmet", 0, /obj/item/clothing/head/helmet/marine/leader, MARINE_CAN_BUY_ARMOR),
+		list("Leader Kit", 0, /obj/effect/essentials_set/leader, VENDOR_ITEM_MANDATORY),
+
 		list("SIDEARM (CHOOSE 1)", 0, null, null, null),
-		list("VP78M6", 0, /obj/item/weapon/gun/pistol/vp78m6, VENDOR_ITEM_MANDATORY),
-		list("M4A4", 0, /obj/item/weapon/gun/pistol/m4a3/m4a4, VENDOR_ITEM_MANDATORY),
+		list("VP78M6", 0, /obj/item/storage/box/guncase/vp78m6, VENDOR_ITEM_MANDATORY),
+		list("M4A4", 0, /obj/item/storage/box/guncase/m4a4, VENDOR_ITEM_MANDATORY),
 
 		list("BELT (CHOOSE 1)", 0, null, null, null),
 		list("M276 Lifesaver Bag", 0, /obj/item/storage/belt/medical/lifesaver, MARINE_CAN_BUY_BELT, VENDOR_ITEM_REGULAR),
@@ -153,26 +157,6 @@ GLOBAL_LIST_INIT(cm_vending_clothing_leader, list(
 
 /obj/structure/machinery/cm_vending/clothing/leader/get_listed_products(mob/user)
 	return GLOB.cm_vending_clothing_leader
-
-/obj/structure/machinery/cm_vending/clothing/leader/alpha
-	squad_tag = SQUAD_MARINE_1
-	req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_ALPHA)
-	headset_type = /obj/item/device/radio/headset/almayer/marine/alpha/lead
-
-/obj/structure/machinery/cm_vending/clothing/leader/bravo
-	squad_tag = SQUAD_MARINE_2
-	req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_BRAVO)
-	headset_type = /obj/item/device/radio/headset/almayer/marine/bravo/lead
-
-/obj/structure/machinery/cm_vending/clothing/leader/charlie
-	squad_tag = SQUAD_MARINE_3
-	req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_CHARLIE)
-	headset_type = /obj/item/device/radio/headset/almayer/marine/charlie/lead
-
-/obj/structure/machinery/cm_vending/clothing/leader/delta
-	squad_tag = SQUAD_MARINE_4
-	req_access = list(ACCESS_MARINE_LEADER, ACCESS_MARINE_DELTA)
-	headset_type = /obj/item/device/radio/headset/almayer/marine/delta/lead
 
 //------------ESSENTIAL SETS---------------
 
