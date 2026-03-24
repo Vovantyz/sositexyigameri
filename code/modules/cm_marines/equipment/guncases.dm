@@ -1241,45 +1241,7 @@
 	new /obj/item/ammo_magazine/pistol(src)
 	new /obj/item/ammo_magazine/pistol(src)
 
-/obj/item/storage/box/guncase/m4a4
-name = "\improper M4A4 pistol case"
-desc = "A gun case containing a M4A4 pistol."
-storage_slots = 9
-can_hold = list(/obj/item/attachable/lasersight/micro, /obj/item/attachable/reddot/small, /obj/item/weapon/gun/pistol/m4a3/m4a4, /obj/item/ammo_magazine/pistol)
-
-/obj/item/storage/box/guncase/m4a4/fill_preset_inventory()
-	new /obj/item/attachable/reddot/small(src)
-	new /obj/item/attachable/lasersight/micro(src)
-	new /obj/item/weapon/gun/pistol/m4a3/m4a4(src)
-	new /obj/item/ammo_magazine/pistol(src)
-	new /obj/item/ammo_magazine/pistol(src)
-	new /obj/item/ammo_magazine/pistol(src)
-	new /obj/item/ammo_magazine/pistol(src)
-	new /obj/item/ammo_magazine/pistol(src)
-	new /obj/item/ammo_magazine/pistol(src)
-
-/obj/item/storage/box/guncase/vp78m6
-name = "\improper VP78M6 pistol case"
-desc = "A gun case containing a VP78M6 pistol."
-storage_slots = 8
-can_hold = list(/obj/item/weapon/gun/pistol/vp78m6, /obj/item/ammo_magazine/pistol/vp78)
-
-/obj/item/storage/box/guncase/vp78m6/fill_preset_inventory()
-	new /obj/item/weapon/gun/pistol/vp78m6(src)
-	new /obj/item/ammo_magazine/pistol/vp78(src)
-	new /obj/item/ammo_magazine/pistol/vp78(src)
-	new /obj/item/ammo_magazine/pistol/vp78(src)
-	new /obj/item/ammo_magazine/pistol/vp78(src)
-	new /obj/item/ammo_magazine/pistol/vp78(src)
-	new /obj/item/ammo_magazine/pistol/vp78(src)
-	new /obj/item/ammo_magazine/pistol/vp78(src)
-
-
-
-
-
-
-	/obj/item/storage/box/guncase/heavy/caws
+/obj/item/storage/box/guncase/heavy/caws
 	name = "\improper Type 97 Automatic Shotgun case"
 	desc = "A case for storing a Type 97 automatic shotgun."
 	icon_state = "uppcawscase"
