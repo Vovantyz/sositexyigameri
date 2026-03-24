@@ -519,6 +519,8 @@
 		/obj/item/attachable/attached_gun/flamer,
 		/obj/item/attachable/attached_gun/flamer/advanced,
 		/obj/item/attachable/stock/rifle/collapsible,
+		/obj/item/attachable/attached_gun/shotgun,
+		/obj/item/attachable/lasersight,
 		/obj/item/attachable/sling,
 	)
 
