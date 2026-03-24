@@ -304,7 +304,7 @@ Defined in conflicts.dm of the #defines folder.
 	flags_human_ai = MELEE_WEAPON_ITEM
 
 	attach_icon = "bayonet_a"
-	melee_mod = 20
+	melee_mod = 25
 	slot = "muzzle"
 	pixel_shift_x = 14 //Below the muzzle.
 	pixel_shift_y = 18
@@ -2324,7 +2324,7 @@ Defined in conflicts.dm of the #defines folder.
 	name = "\improper M41A solid stock"
 	desc = "A rare stock distributed in small numbers to USCM forces. Compatible with the M41A, this stock reduces recoil and improves accuracy, but at a reduction to handling and agility. Also enhances the thwacking of things with the stock-end of the rifle."
 	slot = "stock"
-	melee_mod = 30
+	melee_mod = 20
 	size_mod = 1
 	icon_state = "riflestock"
 	attach_icon = "riflestock_a"
@@ -2416,7 +2416,7 @@ Defined in conflicts.dm of the #defines folder.
 	name = "\improper M20A stock"
 	desc = "The M20A's standard polymer collapsible stock. When extended, it improves scatter, accuracy, and recoil, but slightly hinders agility."
 	slot = "stock"
-	melee_mod = 5
+	melee_mod = 10
 	size_mod = 1
 	icon_state = "m20astock"
 	attach_icon = "m20astock_a"
