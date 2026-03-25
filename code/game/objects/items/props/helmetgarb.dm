@@ -480,8 +480,7 @@
 	garbage = FALSE
 	w_class = SIZE_MEDIUM
 	flags_obj = OBJ_NO_HELMET_BAND
-	vision_flags = SEE_MOBS
-	cell_max_charge = 1000
+	cell_max_charge = 5000
 
 
 /obj/item/prop/helmetgarb/helmet_nvg/marsoc //for Marine Raiders
