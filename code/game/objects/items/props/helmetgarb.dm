@@ -476,20 +476,14 @@
 	active_powered_icon_state = "larp_down_powered"
 	active_icon_state = "larp_down"
 	inactive_icon_state = "larp"
-	gender = PLURAL
-	garbage = FALSE
-	w_class = SIZE_MEDIUM
-	flags_obj = OBJ_NO_HELMET_BAND
+	shape = NVG_SHAPE_FINE
 	cell_max_charge = 5000
 
 
 /obj/item/prop/helmetgarb/helmet_nvg/marsoc //for Marine Raiders
 	name = "\improper Tactical M3 night vision goggles"
 	desc = "With an integrated self-recharging battery, nothing can stop you. Put them on your helmet and press the button and it's go-time."
-	gender = PLURAL
-	garbage = FALSE
-	w_class = SIZE_MEDIUM
-	flags_obj = OBJ_NO_HELMET_BAND
+	shape = NVG_SHAPE_FINE
 	cell_max_charge = -1
 
 #undef NVG_SHAPE_COSMETIC
