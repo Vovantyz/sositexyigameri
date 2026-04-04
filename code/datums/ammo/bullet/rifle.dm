@@ -240,7 +240,7 @@
 /datum/ammo/bullet/rifle/heavy/dirty
 	name = "irradiated 10x28 bullet"
 	debilitate = list(0,0,0,3,0,0,0,1)
-	damage = 60
+	damage = 55
 	shrapnel_chance = SHRAPNEL_CHANCE_TIER_7
 
 /datum/ammo/bullet/rifle/heavy/ap/dirty
@@ -257,7 +257,7 @@
 
 /datum/ammo/bullet/rifle/heavy/holo_target //Royal marines smartgun bullet, less damage, holo-target effect & range-limited knock/pushback
 	name = "holo-targeting 10x28 bullet"
-	damage = 40
+	damage = 50
 	/// inflicts this many holo stacks per bullet hit
 	var/holo_stacks = 25
 	/// modifies the default cap limit of 100 by this amount
@@ -290,7 +290,7 @@
 
 /datum/ammo/bullet/rifle/heavy/upp_smartgun
 	name = "12.7x40 bullet"
-	damage = 90 //giant fuck off bullet
+	damage = 75 //giant fuck off bullet
 	damage_falloff = 0
 
 /datum/ammo/bullet/rifle/heavy/upp_smartgun/on_hit_mob(mob/target, obj/projectile/fired_proj)
