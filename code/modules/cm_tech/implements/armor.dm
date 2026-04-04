@@ -44,19 +44,19 @@ GLOBAL_LIST_EMPTY(armor_plate_data)
 			remove_armor_boost(C)
 		parent_suit = null
 
-/// Helper: get stored original armor value for a suit
+/// Helper: get stored original armor values for a suit
 /obj/item/clothing/accessory/health/proc/get_original_armor(obj/item/clothing/suit)
 	var/list/data = GLOB.armor_plate_data[suit]
 	if(data)
-		return data["original_armor"]
+		return data["original_armor"] // returns associative list with "bullet" and "bomb"
 	return null
 
-/// Helper: set stored original armor value for a suit
-/obj/item/clothing/accessory/health/proc/set_original_armor(obj/item/clothing/suit, value)
+/// Helper: set stored original armor values for a suit
+/obj/item/clothing/accessory/health/proc/set_original_armor(obj/item/clothing/suit, bullet_value, bomb_value)
 	if(!GLOB.armor_plate_data[suit])
 		GLOB.armor_plate_data[suit] = list()
 	var/list/data = GLOB.armor_plate_data[suit]
-	data["original_armor"] = value
+	data["original_armor"] = list("bullet" = bullet_value, "bomb" = bomb_value)
 
 /// Helper: get list of attached plates for a suit
 /obj/item/clothing/accessory/health/proc/get_attached_plates(obj/item/clothing/suit)
@@ -72,14 +72,17 @@ GLOBAL_LIST_EMPTY(armor_plate_data)
 	var/list/data = GLOB.armor_plate_data[suit]
 	data["plates"] = plates
 
-/// Applies armor boost to the suit (increases armor_bullet by one level per attached plate)
+/// Applies armor boost to the suit: +10 bullet, +5 bomb
 /obj/item/clothing/accessory/health/proc/apply_armor_boost(obj/item/clothing/suit)
 	if(!suit)
 		return
 
-	// Store original armor value if not already stored
-	if(get_original_armor(suit) == null)
-		set_original_armor(suit, suit.armor_bullet)
+	// Store original armor values if not already stored
+	var/original = get_original_armor(suit)
+	if(original == null)
+		var/original_bullet = suit.armor_bullet
+		var/original_bomb = suit.armor_bomb // may be null or 0 if not defined
+		set_original_armor(suit, original_bullet, original_bomb)
 
 	var/list/attached_plates = get_attached_plates(suit)
 	if(!(src in attached_plates))
@@ -88,14 +91,18 @@ GLOBAL_LIST_EMPTY(armor_plate_data)
 
 	update_suit_armor(suit)
 
-/// Recalculates suit armor based on number of attached plates
+/// Recalculates suit armor based on number of attached plates (each gives +10 bullet, +5 bomb)
 /obj/item/clothing/accessory/health/proc/update_suit_armor(obj/item/clothing/suit)
-	var/original = get_original_armor(suit)
+	var/list/original_data = get_original_armor(suit)
+	var/original_bullet = original_data ? original_data["bullet"] : suit.armor_bullet
+	var/original_bomb = original_data ? original_data["bomb"] : (suit.armor_bomb || 0)
+
 	var/plate_count = length(get_attached_plates(suit))
-	var/new_value = original
-	for(var/i in 1 to plate_count)
-		new_value = get_next_armor_level(new_value)
-	suit.armor_bullet = new_value
+	var/new_bullet = original_bullet + (plate_count * 10)
+	var/new_bomb = original_bomb + (plate_count * 5)
+
+	suit.armor_bullet = new_bullet
+	suit.armor_bomb = new_bomb
 
 /// Removes armor boost from the suit
 /obj/item/clothing/accessory/health/proc/remove_armor_boost(obj/item/clothing/suit)
@@ -105,15 +112,18 @@ GLOBAL_LIST_EMPTY(armor_plate_data)
 	if(attached_plates)
 		attached_plates -= src
 		if(length(attached_plates) == 0)
-			// Restore original value
-			var/original = get_original_armor(suit)
-			if(original != null)
-				suit.armor_bullet = original
+			// Restore original values
+			var/list/original_data = get_original_armor(suit)
+			if(original_data)
+				suit.armor_bullet = original_data["bullet"]
+				suit.armor_bomb = original_data["bomb"]
 			// Clean up global data
 			GLOB.armor_plate_data -= suit
 		else
 			set_attached_plates(suit, attached_plates)
 			update_suit_armor(suit)
+
+// ==================== CONCRETE PLATE TYPES ====================
 
 /obj/item/clothing/accessory/health/ceramic_plate
 	name = "ceramic plate"
