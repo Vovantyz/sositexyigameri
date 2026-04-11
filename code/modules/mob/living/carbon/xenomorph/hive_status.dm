@@ -1187,7 +1187,7 @@
 		"explosivearmor" = -XENO_HIVE_STATMOD_FLAT_30,
 		"plasmapool" = XENO_HIVE_STATMOD_FLAT_NONE,
 		"plasmagain" = XENO_HIVE_STATMOD_FLAT_NONE,
-		"speed" = -XENO_HIVE_STATMOD_FLAT_LOWMED_SPEED,
+		"speed" = XENO_HIVE_STATMOD_FLAT_NONE,
 		"evasion" = XENO_HIVE_STATMOD_FLAT_NONE,
 	)
 
